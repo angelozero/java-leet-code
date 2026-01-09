@@ -6,7 +6,8 @@
 | Add Two Numbers  | 🟡  |
 | Median of Two Sorted Arrays  | 🔴  |
 | String to Integer (atoi) | 🟡 |
-| Palindrome Numver | 🟢 |
+| Palindrome Number | 🟢 |
+| JoKenPo | 🟢 | 
 
 - 
 
