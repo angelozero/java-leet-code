@@ -1,7 +1,17 @@
 # Java LeetCode Algorithms Chalanges
 
-| Chalange | Level | Status |
-| -------- | ----- | ------ |
-| Two Sum  | Easy  | ✅     |
-| Add Two Numbers  | Medium  | ✅     |
-| Median of Two Sorted Arrays  | Hard  | ✅     |
+| Chalange | Level | 
+| -------- | ----- |
+| Two Sum  | 🟢  |
+| Add Two Numbers  | 🟡  |
+| Median of Two Sorted Arrays  | 🔴  |
+| String to Integer (atoi) | 🟡 |
+| Palindrome Numver | 🟢 |
+
+- 
+
+| Level Info |  |
+| ----------- | - |
+| Easy | 🟢 |
+| Medium | 🟡 |
+| Hard | 🔴 |
