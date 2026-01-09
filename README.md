@@ -8,6 +8,7 @@
 | String to Integer (atoi) | 🟡 |
 | Palindrome Number | 🟢 |
 | JoKenPo | 🟢 | 
+| Merge K Sorted Lists | 🔴 |
 
 - 
 
