@@ -12,11 +12,11 @@
 | 008 - Sorted and Recursive | 🔴 |
 | 009 - Swap Nodes in Pairs | 🟡 |
 | 010 - Valid Number | 🔴 | 
-
+| 011 - Search Insert Position | 🟢 |
 
 - 
 
-| Level Info |  |
+|  |  |
 | ----------- | - |
 | Easy | 🟢 |
 | Medium | 🟡 |
