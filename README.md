@@ -14,6 +14,7 @@
 | 010 - Valid Number | 🔴 | 
 | 011 - Search Insert Position | 🟢 |
 | 012 - Length of Last Word | 🟢 | 
+| 013 - Single Number II | 🟡 |
 
 
 - 
