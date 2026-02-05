@@ -15,7 +15,7 @@
 | 011 - Search Insert Position | 🟢 |
 | 012 - Length of Last Word | 🟢 | 
 | 013 - Single Number II | 🟡 |
-| 014 - Search in a Binary Search Tree | *WIP* |
+| 014 - Search in a Binary Search Tree | 🟢 |
 
 -
 
