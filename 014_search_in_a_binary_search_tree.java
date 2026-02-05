@@ -30,53 +30,23 @@
  * }
  */
 class Solution {
-    public List<Integer> searchNodesList = new ArrayList<>();
 
     public TreeNode searchBST(TreeNode root, int val) {
-
-        searchHelper(root, val);
-
-        searchNodesList.forEach(System.out::println);
-
-        return null;
-        
+        return searchHelper(root, val);
     }
 
-    private void searchHelper(TreeNode root, int value) {
+    private TreeNode searchHelper(TreeNode root, int value) {
         if(root != null) {
             if (root.val == value) {
-                addNodeValueSearchNodeList(root);
+                return root;
 
             } else if (root.val > value) {
-                searchHelper(root.left, value);
+                return searchHelper(root.left, value);
             }
 
-            searchHelper(root.right, value);
+            return searchHelper(root.right, value);
         }
-    }
 
-     private void addNodeValueSearchNodeList(TreeNode root) {
-        if (root != null) {
-            searchNodesList.add(root.val);
-
-            if (root.left != null) {
-                addNodeValueSearchNodeList(root.left);
-            }
-
-            if (root.right != null) {
-                addNodeValueSearchNodeList(root.right);
-            }
-        }
-    }
-
-    private TreeNode createTreeNode(TreeNode node, int val){
-        if (node != null ) {
-            return 
-        }
-    }
-
-    // TODO criar o retorno de TreeNode
-    private TreeNode createTreeNodeLeftHelper(TreeNode node, int val){
-        return new TreeNode()
+        return null;
     }
 }
