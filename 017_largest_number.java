@@ -11,51 +11,45 @@
     Example 2:
     Input: nums = [3,30,34,5,9]
     Output: "9534330"
+
+    Example 3:
+    Input: nums = [700000000, 500000000]
+    Output: "700000000500000000"
  */
 
 class Solution {
     public String largestNumber(int[] nums) {
+        var response = "";
+        List<AuxClass> auxClassList = new ArrayList<>();
 
-        var strAux = "";
-        var intAux = 0;
-        var strAuxFinal = "";
+        for (int num : nums) {
+            if (num < 10) {
+                auxClassList.add(new AuxClass(num + "0", true));
 
-        for(int x = 0; x < nums.length; x++){
-            strAux += String.valueOf(nums[x]);
-        }
-        
-        String[] strList = strAux.split("");
+            } else if (String.valueOf(num).contains("0")) {
+                var auxValue = String.valueOf(num).split("");
 
-        int[] intList = new int[strList.length];
-
-        for(int x = 0; x < strList.length; x++){
-            intList[x] = getValue(strList[x]);
-        }
-
-        for(int x = 0; x < intList.length; x++){
-            for(int z = x + 1; z < intList.length; z++){
-                if(intList[x] < intList[z]){
-                    intAux = intList[x];
-                    intList[x] = intList[z];
-                    intList[z] = intAux;
+                for (String value : auxValue) {
+                    auxClassList.add(new AuxClass(value, false));
                 }
+
+            } else {
+                auxClassList.add(new AuxClass(String.valueOf(num), false));
             }
-            strAuxFinal += String.valueOf(intList[x]);
         }
 
-        for(int x = 0; x < intList.length; x++){
-            System.out.println(strList[x]);
+        auxClassList.sort(Comparator.comparingInt((AuxClass a) -> Integer.parseInt(a.value())).reversed());
+
+        for (AuxClass auxClass : auxClassList) {
+            if (auxClass.delete) {
+                response += auxClass.value.replace("0", "");
+            } else {
+                response += auxClass.value;
+            }
         }
 
-        return strAuxFinal;
+        return response;
     }
 
-    private int getValue(String value){
-        try {
-            return Integer.parseInt(value);
-
-        } catch (Exception ex){
-            throw new RuntimeException("Falha ao converter numero");
-        }
-    }
+    record AuxClass(String value, boolean delete) {}
 }
