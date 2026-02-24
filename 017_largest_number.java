@@ -19,28 +19,29 @@
 
 class Solution {
     public String largestNumber(int[] nums) {
-        var aux = 0;
-        List<String> auxList = new ArrayList<>();
-
-
+        String[] strs = new String[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[j] % 10 == 0 && (nums[j] / 10) == nums[i]) {
-                    aux = nums[j];
-                    nums[j] = nums[i];
-                    nums[i] = aux;
-                
-                } 
-            }
-
-            auxList.add(String.valueOf(nums[i]));
+            strs[i] = String.valueOf(nums[i]);
         }
 
-        return finalResponse(auxList);
-    }
+        Arrays.sort(strs, new Comparator<String>() {
+            @Override
+            public int compare(String a, String b) {
+                String order1 = a + b;
+                String order2 = b + a;
+                return order2.compareTo(order1);
+            }
+        });
 
-    private String finalResponse(List<String> list){
-        Collections.reverse(list);
-        return String.join("", list); 
+        if (strs[0].equals("0")) {
+            return "0";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (String s : strs) {
+            sb.append(s);
+        }
+
+        return sb.toString();
     }
 }
