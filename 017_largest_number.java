@@ -19,37 +19,28 @@
 
 class Solution {
     public String largestNumber(int[] nums) {
-        var response = "";
-        List<AuxClass> auxClassList = new ArrayList<>();
+        var aux = 0;
+        List<String> auxList = new ArrayList<>();
 
-        for (int num : nums) {
-            if (num < 10) {
-                auxClassList.add(new AuxClass(num + "0", true));
 
-            } else if (String.valueOf(num).contains("0")) {
-                var auxValue = String.valueOf(num).split("");
-
-                for (String value : auxValue) {
-                    auxClassList.add(new AuxClass(value, false));
-                }
-
-            } else {
-                auxClassList.add(new AuxClass(String.valueOf(num), false));
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] % 10 == 0 && (nums[j] / 10) == nums[i]) {
+                    aux = nums[j];
+                    nums[j] = nums[i];
+                    nums[i] = aux;
+                
+                } 
             }
+
+            auxList.add(String.valueOf(nums[i]));
         }
 
-        auxClassList.sort(Comparator.comparingInt((AuxClass a) -> Integer.parseInt(a.value())).reversed());
-
-        for (AuxClass auxClass : auxClassList) {
-            if (auxClass.delete) {
-                response += auxClass.value.replace("0", "");
-            } else {
-                response += auxClass.value;
-            }
-        }
-
-        return response;
+        return finalResponse(auxList);
     }
 
-    record AuxClass(String value, boolean delete) {}
+    private String finalResponse(List<String> list){
+        Collections.reverse(list);
+        return String.join("", list); 
+    }
 }
