@@ -18,7 +18,8 @@
 | 014 - Search in a Binary Search Tree | 🟢 |
 | 015 - Thales Interview: Minimum Removals to Maintain Non-negative Prefix Sum | 🟡 | 
 | 016 - Absolute Sorting (Elton's Chalange) | 🐉 |
-| 017 - Largest Number | 🟡 | 
+| 017 - Largest Number | 🟡 |
+| 018 - Count Primes | 🟡 | 
 
 -
 
