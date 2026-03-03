@@ -20,6 +20,8 @@
 | 016 - Absolute Sorting (Elton's Chalange) | 🐉 |
 | 017 - Largest Number | 🟡 |
 | 018 - Count Primes | 🟡 | 
+| 019 - Basic Calculator | 🟡 *WIP* | 
+
 
 -
 
